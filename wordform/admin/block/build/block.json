@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wordform-block/wordform",
+  "version": "0.1.0",
+  "title": "WordForm",
+  "category": "widgets",
+  "icon": "dashicons dashicons-forms",
+  "description": "Add created forms. Use the dropdown to select the form you would like to attach with this post/page. Dropdown select form will not be shown at front-end.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wordform",
+  "attributes": {
+    "message": {
+      "type": "string",
+      "source": "html"
+    },
+    "createdformdata": {
+      "type": "string",
+      "source": "html",
+      "selector": ".sc-wordform-block-editor-div-wrapper"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

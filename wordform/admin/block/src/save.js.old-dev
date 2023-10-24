@@ -1,0 +1,15 @@
+import { useBlockProps } from '@wordpress/block-editor';
+
+export default function save({attributes}) {	
+    const blockProps = useBlockProps.save();
+    //return <div { ...blockProps }>{ attributes.message }</div>;	
+	//return <div { ...blockProps }>{ data }</div>;	
+	console.log('SAVE: ');
+	//console.log(blockProps);
+	//console.log(props);
+	//console.log(props.formdata);
+	console.log(attributes.createdformdata);
+	//return attributes.createdformdata;	
+    return <div className='sc-wordform-div-wrapper' dangerouslySetInnerHTML={ { __html: attributes.createdformdata } }></div> 	    			 		 
+	//return null;
+}

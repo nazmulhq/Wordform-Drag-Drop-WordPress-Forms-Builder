@@ -1,0 +1,247 @@
+.wordform-input-element-div-wrapper {
+	margin:15px; 
+	cursor: pointer; 
+	border: 1px dashed #2A551D; 
+	padding:15px;		
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.wordform-builder-div-wrapper {
+	margin-top: 25px;
+	width: 75%;
+	float: left;
+}
+.wordform-builder-form-options-div-wrapper {
+	float: right;
+	margin-right: 2%;
+	width: 20%;
+	margin-top: 4.5%;
+	padding: 15px;
+	border-radius: 6px;
+	background-color: aliceblue;
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+	min-height: 500px;	
+}
+.wordform-form-action-buttons-wrapper {
+	display: inline-block;
+	float: right;
+}
+.wordform-input-element-div-wrapper input, .wordform-dropped-element-textarea-field-options textarea, .wordform-dropped-element-select-field-options select.wordform-dropped-select-name {
+	cursor:pointer; 
+	background-color: #FFFFFF;	
+	color: #000000;
+}
+.wordform-dropped-checkbox-name {
+	background-color: #FFFFFF;
+}
+.wordform-element-delete {
+	color:red; 
+	float:right;
+	margin-right: 15px;
+}
+.wordform-field-options-show-hide {
+	color: chocolate;
+	float: right;
+	margin-right: 15px;
+}
+
+.wordform-input-element-div-wrapper .input-label {
+  vertical-align: baseline;
+  font-size: 18px;
+  padding-right: 10px; 	
+}
+.radio-options-label-name {
+	font-size: 18px;
+	vertical-align: baseline;
+}
+.wordform-input-element-div-wrapper .input-text {
+	height: 40px;
+	width: 30%;
+}
+.wordform-radio-option {
+	margin-top: 10px;
+}
+
+.wordform-dropped-radio-label, .wordform-dropped-text-label, .wordform-dropped-textarea-label, .wordform-dropped-checkbox-label, .wordform-dropped-select-label, .wordform-dropped-number-label {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+}
+.wordform-dropped-text-name, .wordform-dropped-number-name {
+	height: 40px;
+	width: 35%;
+}
+.wordform-dropped-textarea-name {
+	height: 150px;
+	width: 35%;
+}
+.wordform-dropped-element-radio-field-options li {
+	list-style: none;
+	font-size: 16px;
+}
+.wordform-field-options-edit-close {
+	float: right;
+	cursor: pointer;
+}
+.wordform-required-ul li, .wordform-input-label li, .wordform-field-options li {
+	list-style: none;		
+}
+.wordform-add-radio-option, .wordform-add-select-option, .wordform-add-checkbox-option {
+	cursor: pointer;
+	font-weight: bolder;
+	color: darkgreen;		
+	padding: 8px;
+  	background-color: coral;
+  	border-radius: 10px;
+  	margin-left: 27%;
+  	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.wordform-radio-field-remove, .wordform-select-field-remove, .wordform-checkbox-field-remove {
+	color: #E90A0E;
+	margin-left: 10px;	
+	cursor: pointer;
+	vertical-align: sub;
+	background-color: azure;
+	padding: 3px;
+	border-radius: 15px;	
+}
+
+li.draggable-element {
+	margin-bottom: 15px;		
+}
+
+.wordform-dropzone-div-wrapper {
+	width: auto; 
+	min-height: 375px; 
+	border: 1px dashed #E30D0D; 
+	padding-top: 50px;	
+	padding-bottom: 100px;
+	border-radius: 10px;
+}
+.wordform-dropped-select-name {
+	height: 40px;
+	width: 35%;
+}
+.wordform-input-element-div-wrapper-submit-button {
+	text-align: left;
+	border: none;
+	box-shadow: none;
+}
+.wordform-input-element-div-wrapper-submit-button .wordform-admin-create-form-submit-button{
+	padding: 2px;	
+	font-size: 18px;	
+	margin-top: 15px;	
+}
+.wordform-message-info {
+	text-align: right;	
+	font-size: 16px;
+}
+.wordform-message-info span {
+	padding-top: 3px;
+}
+.text-error {
+	color: red;
+	font-weight: 600;	
+}
+.text-success {
+	color: green;
+	font-weight: 600;
+}
+.text-info {
+	color: deepskyblue;
+	font-weight: 600;
+}
+.text-warning {
+	color: orange;
+	font-weight: 600;
+}
+.wordform-create-form-name-label-title {
+	text-align: center;
+	border: none;
+	box-shadow: none;	
+}
+.wordform-create-form-name-label-title span {
+	font-size: 25px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.sc-wordform-dropzone-watermark-text {
+	position: absolute;
+	font-size: 6em;
+	opacity: 0.10;
+	left: 10%;
+	bottom: 50%;
+	letter-spacing: 0.8em;	
+}
+.wordform-drag-elements-hints {
+	margin-left: 15px;
+	color: crimson;
+	font-style: italic;
+}
+.wordform-draggable-elements-div-wrapper .wordform-drag-elements-button {
+	min-height: 45px !important;
+	min-width: 8%;
+}
+#wordformAllFormsWrapperTable, #wordformUsersSubmissionWrapperTable {
+	padding: 25px;
+}
+#wordformAllFormsWrapperTable #wordformAllFormsTable_filter input, #wordformUsersSubmissionWrapperTable #wordformUsersSubmissionDataTable_filter input {
+	background-color: #FFFFFF;
+}
+#wordformAllFormsWrapperTable #wordformAllFormsTable_length select, #wordformUsersSubmissionWrapperTable #wordformUsersSubmissionDataTable_length select {
+	background-color: #FFFFFF;
+}
+
+#scWordFormValidation table {
+	width: 70%;
+}
+#scWordFormValidation table td input {
+	width: 100%;
+	height: 40px;
+}
+
+#scWordFormValidation table td.sc-wordform-settings-validation-tab-label-td {
+	width: 25%;
+}
+#scWordformSelectValidationMsgsFor {
+	width: 100%;
+	height: 40px;
+}
+.sc-wordform-validation-message-settings-info {
+	padding-left: 10px;
+	vertical-align: sub;
+}
+.msg-success {
+	color:  green;
+}
+.msg-error {
+	color:  red;
+}
+.sc-wordform-shortcode-copy-text {
+	cursor: pointer;
+	font-weight: 600;
+	color: #2ea2cc;
+	background-color: color-mix;
+	padding: 1px;	
+}
+.sc-wordform-delete-btn span {
+	color: red;	
+}
+.button-primary.button-large.wordform-save-btn, .button-primary.button-large.wordform-preview-btn {
+	padding: 7px 10px;
+	font-weight: bold;
+	background-color: #0a5d00;
+	border-color: #0a5d00;
+}
+.button-primary.button-large.wordform-save-btn:hover, .button-primary.button-large.wordform-preview-btn:hover, .button-primary.button-large.wordform-save-btn:focus, .button-primary.button-large.wordform-preview-btn:focus,.button-primary.button-large.wordform-save-btn:active, .button-primary.button-large.wordform-preview-btn:active {
+	padding: 7px 10px;
+	background-color: #063b00;
+	border-color: #063b00;	
+	border: none;
+	outline: none;
+}
+
+a.disabled {
+	pointer-events: none;
+}

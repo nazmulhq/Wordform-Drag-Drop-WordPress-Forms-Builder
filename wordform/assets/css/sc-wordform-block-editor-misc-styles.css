@@ -1,0 +1,174 @@
+/* Built Form Display */
+.sc-wordform-built-form-frontend-outermost-div-wrapper form {
+	width: auto;
+	margin: 0 auto;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.small {
+	width: 30%;
+	margin: 0 auto;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.medium {
+	width: 50%;
+	margin: 0 auto;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.large {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.sc-wordform-built-form-frontend-outermost-div-wrapper input[type="text"], input[type="number"] {
+	height: 40px;
+	width: 100%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper input, textarea, select, input[type="checkbox"], input[type="radio"] {
+	border: 1px solid #abb8c3;
+  	-webkit-transition: 0.2s;
+  	transition: 0.2s;
+  	outline: none;		
+	
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper input:focus, textarea:focus, select:focus {
+	border: 2px solid #0D44D9;
+}
+.sc-wordform-error-input {
+	border: 2px solid #F30D11;
+  	-webkit-transition: 0.2s;
+  	transition: 0.2s;
+  	outline: none;			
+}
+.sc-wordform-error-msg {
+	font-size: 12px;
+	color: #F30D11;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper textarea {
+	width: 100%;	
+	min-height: 200px;	
+	margin-top: 1%;
+}
+.sc-wordform-built-select-element-label-wrapper {
+	margin-top: 3%;
+	margin-bottom: 0.5%;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper select {
+  width: 100%;
+  max-width: 100%;	
+  background-color: #FFFFFF;
+  height: 40px;
+  font-size: 16px;  
+  cursor: pointer;
+  padding-left: 10px;	
+}
+.sc-wordform-built-text-element-label, .sc-wordform-built-number-element-label, .sc-wordform-built-textarea-element-label, .sc-wordform-built-select-element-label {
+	font-weight: 600;
+}
+.sc-wordform-built-checkbox-element-label-wrapper, .sc-wordform-built-radio-element-label-wrapper {
+	margin-top: 3%;
+	margin-bottom: 0.5%;
+	font-weight: 600;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper input[type="checkbox"] + label, .sc-wordform-built-form-frontend-outermost-div-wrapper input[type="radio"] + label {
+	padding-left: 1.8%;
+	margin: 7px 0;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper input[type="checkbox"], input[type="radio"] {
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	/*vertical-align: sub;*/
+	margin: 8px 0;
+}
+/* Frontend button */
+.sc-wordform-built-form-frontend-outermost-div-wrapper .button {
+	vertical-align: top;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper .button-primary {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: none;	
+	border-radius: 3px;
+	white-space: nowrap;
+	box-sizing: border-box;	
+	font-size: 18px;
+	padding: 8px 25px;
+	margin-top: 3%;
+	cursor: pointer;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper .button-primary:hover {
+	transition: 0.3s;	
+	background: #006ba1;
+} 
+.sc-wordform-built-form-frontend-outermost-div-wrapper .button-large {
+	min-height: 32px;
+	line-height: 2.30769231;
+	padding: 0 12px;
+}
+.sc-wordform-built-form-submit-button-wrapper.left {
+	text-align: left;
+	margin-top: 3%;
+}
+.sc-wordform-built-form-submit-button-wrapper.center {
+	text-align: center;
+	margin-top: 3%;
+}
+.sc-wordform-built-form-submit-button-wrapper.right {
+	text-align: right;
+	margin-top: 3%;
+}
+
+span.sc-wordform-required-field {
+	color: red;
+	font-weight: bolder;
+	padding-left: 5px;
+}
+.sc-wordform-submission-success-msg-div-wrapper {
+	text-align: center;
+	color: green;
+	font-weight: 600;	
+}
+.sc-wordform-submisson-fail-msg-div-wrapper {
+	text-align: center;
+	color: red;
+	font-weight: 600;		
+}
+
+
+/* Block Editor */
+/*.sc-wordform-block-editor-div-wrapper {
+	max-width: 100% !important;
+}*/
+select.sc-wordform-block-editor-form-selector-select {
+	margin-left: 20%;
+	width: 100%;
+	height: 40px;
+	background-color: aliceblue;
+}
+
+@media (max-width:801px) {
+	
+.sc-wordform-built-form-frontend-outermost-div-wrapper .button-primary {
+	margin-top: 5%;		
+}	
+
+.sc-wordform-built-form-frontend-outermost-div-wrapper form {
+	width: auto;
+	margin: 0 5%;
+}	
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.small {
+	width: 50%;
+	margin: 0 auto;
+}	
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.medium {
+	width: 70%;
+	margin: 0 auto;
+}
+.sc-wordform-built-form-frontend-outermost-div-wrapper form.large {
+	width: 90%;
+	margin: 0 auto;
+}
+	
+	
+}

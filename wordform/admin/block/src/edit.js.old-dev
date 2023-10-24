@@ -1,0 +1,192 @@
+import { __ } from '@wordpress/i18n';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { TextControl, SelectControl } from '@wordpress/components';
+import ServerSideRender from '@wordpress/server-side-render';
+
+import apiFetch from '@wordpress/api-fetch';
+
+import { useState, useEffect } from '@wordpress/element';
+//import React, { useEffect, useState } from 'react';
+
+import metadata from './block.json';
+import './editor.scss';
+
+export default function Edit({attributes})  {
+	//const [ size, setSize ] = useState( '50%' );
+	const blockProps	= useBlockProps();
+	//const blockProps	= useBlockProps({ className: 'sc-wordform-block-editor-wrapper-div'});
+	const [renderdata, setRenderdata ]	   = useState("");
+	const [myCar, setMyCar] = useState("Volvo");
+	const { content, setContent } = useState("");	
+	const [ title, setTitle ]		= useState("Test Title");
+	
+	const [ selectdata, setSelectdata ]	= useState("");
+	const [ formdata, setFormdata ]	 = useState("");
+	const [ formid, setFormid ]  	    = useState("");
+	
+	const [data, setData] = useState(null);	
+	const [url, setUrl ]  = useState("https://jsonplaceholder.typicode.com/todos");
+	
+	
+	console.log('Attributes: ');
+	console.log(attributes);
+	//console.log( myCar );
+	//console.log( metadata.attributes.ajaxurl );
+	//console.log( metadata.attributes.message );
+	//console.log(sc_wordform_block_editor_misc_script_obj);
+	
+    //console.log(content);
+			
+	const handleChange = (event) => {
+    	setMyCar(event.target.value);	
+		setUrl("https://jsonplaceholder.typicode.com/todos?param="+event.target.value);
+  	}	
+		
+	const getSelectedFormID	= (event) => {
+		let selectedFormID	=	 event.target.value;
+		console.log('onChangeSelect: '+selectedFormID);		
+		setFormid(selectedFormID);					
+	}
+	
+	const getFormsdata = () => {
+		useEffect(() => {
+			
+		apiFetch( {
+			path: 'wordform/v1/wordform-block',
+			method: 'POST',
+			//data: { action: 'sc_wordform_render_selected_form_in_block_editor', security: sc_wordform_block_editor_misc_script_obj.nonce, WordFormID: 'wordform-11' },
+		} ).then( ( res ) => {		   
+			console.log( res );
+			const jData = JSON.parse(res);
+			console.log(jData);
+			setSelectdata(jData);
+		} );		
+			
+		},[]);
+	}
+	
+	
+	//const fetchSelectedForm = () => {
+		
+		useEffect(() => {
+			console.log('fetchSelectedFormdata:'+ formid );
+			
+			apiFetch( {
+				path: 'wordform/v1/get-wordform',
+				method: 'POST',
+				data: { WordFormID: formid },
+			} ).then( ( res ) => {		   
+				console.log( res );
+				const jData = JSON.parse(res);
+				console.log(jData);
+				if ( jData.status == 'success' ) {
+					setFormdata(jData.formdata);		
+					attributes.createdformdata = jData.formdata;
+				}
+			} );		
+			
+		}, [formid]);		
+	//}
+	
+	
+	
+	const callPost = () => {
+		useEffect(() => {
+		fetch( sc_wordform_block_editor_misc_script_obj.ajax_url, {
+			  method: 'POST',
+			  body: JSON.stringify({
+						action: 'sc_wordform_render_selected_form_in_block_editor',
+						security: sc_wordform_block_editor_misc_script_obj.nonce,
+				        WordFormID: 'wordform-11'
+			         })
+			  }).then((response) => response.json())
+			  .then((responseJson) => {
+						console.log(responseJson);
+			 }).catch((error) => {
+					  	console.log(error);
+					 });		
+		}, []);		
+	}
+		
+	const callGet = () => {
+		useEffect(() => {
+		let getURL	=	sc_wordform_block_editor_misc_script_obj.ajax_url +'?action=sc_wordform_block_editor_test_get'	
+		fetch( sc_wordform_block_editor_misc_script_obj.ajax_url, {
+			  method: 'GET',
+			  }).then((response) => response.json())
+			  .then((responseJson) => {
+						console.log(responseJson);
+			 }).catch((error) => {
+					  	console.log(error);
+					 });		
+		}, []);		
+	}
+	
+	
+	
+	
+	const testAjax	= (url) => {		
+	console.log('Test URL:' + url );	
+	useEffect(() => {
+		fetch(url)
+		  .then((res) => res.json())
+		  .then((data) => { setData(data); console.log(data) })
+	 }, [url]);			
+	}
+	
+	
+	
+    return (		
+        /*<div { ...useBlockProps() }>
+            <TextControl                            
+                label={ __( 'Message', 'WordForm' ) }
+                value={ attributes.message }
+                onChange={ ( val ) => setAttributes( { message: val } ) }
+            />
+        </div>*/
+		
+		<div {...blockProps}>		
+				   
+						
+
+        { /*
+		<select value={myCar} onChange={handleChange}>
+				<option value="Ford">Ford</option>
+				<option value="Volvo">Volvo</option>
+				<option value="Fiat">Fiat</option>
+			</select>
+		*/}
+				
+		
+		{ /*testAjax(url)*/ }
+
+        { /*callPost()*/ }
+        
+        { /*callGet()*/ }
+
+        { getFormsdata() }
+
+        { /*console.log(data)*/}
+
+        {/*			
+		data &&
+        	data.map((item) => {
+          	  return <p key={item.id}>{item.title}</p>;
+        }) */}		
+		
+           
+		   <select onChange={getSelectedFormID}>
+		       <option value="">Select Form</option>
+			   {
+			    selectdata && selectdata.map( (item) => ( <option key={item.ID} value={item.formID}>{item.formID}</option> ))
+               }																
+			</select>
+		   
+
+	        <div dangerouslySetInnerHTML={ { __html: attributes.createdformdata } }></div>
+        
+						  
+	    </div>
+		
+    );
+}
